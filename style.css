@@ -1,0 +1,255 @@
+
+:root {
+    --primary-blue: #004e92;      
+    --poison-green: #006b3c;      
+    --text-color: #333;
+    --light-text: #f4f4f4;
+    --glass-bg: rgba(0, 20, 40, 0.7); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--light-text);
+    background-color: #1a1a1a;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    
+    background-image: url('hatterkep.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(8px);      
+    transform: scale(1.1);
+    
+    z-index: -1; 
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--poison-green);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light-text);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    color: #4CAF50; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1e00ff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-top: 2px solid var(--poison-green);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--poison-green);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--poison-green);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 { color: #fff; }
+h2 { color: #81c784; }
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-top: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0; 
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background-color: transparent;
+    border: 2px solid var(--primary-blue);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background-color: var(--primary-blue);
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid var(--poison-green);
+    color: #f4f4f4;
+    font-size: 0.9rem;
+}
+
+.btn.secondary:hover {
+    background-color: var(--poison-green);
+}
+
+.btn-nav {
+    border: 1px solid var(--light-text);
+}
+
+.btn-nav:hover {
+    background: var(--light-text);
+    color: #000;
+}
+
+.section-title {
+    text-align: center;
+    background: rgba(0,0,0,0.8);
+    padding: 10px;
+    display: inline-block;
+}
+
+.catch-card {
+    background-color: rgba(0, 20, 40, 0.7); 
+    color: #f4f4f4; 
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--primary-blue);
+    backdrop-filter: blur(10px)
+}
+
+.card-text h3 {
+    color: #f4f4f4; 
+    margin-bottom: 0.5rem;
+}
+
+.card-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+}
+
+.card-text {
+    padding: 1.5rem;
+}
+.card-text p {
+color: #f4f4f4;
+}
+
+.card-text h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    border-top: 4px solid var(--primary-blue);
+    margin-top: 4rem;
+}
+
+.email a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.socials {
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    .glass-panel {
+        padding: 1.5rem;
+    }
+}
